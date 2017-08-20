@@ -14,6 +14,11 @@
 
     <modules>
         <module>ctsig-eureka-server</module>
+        <module>ctsig-admin-server</module>
+        <module>ctsig-config-server</module>
+        <module>ctsig-api-gateway</module>
+        <module>ctsig-zikpin-server</module>
+        <module>ctsig-hystrix-turbine</module>
     </modules>
 
     <properties>

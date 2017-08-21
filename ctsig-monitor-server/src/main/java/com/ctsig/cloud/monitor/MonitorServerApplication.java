@@ -1,4 +1,4 @@
-package com.ctsig.cloud.admin;
+package com.ctsig.cloud.monitor;
 
 import de.codecentric.boot.admin.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
@@ -11,8 +11,8 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 @EnableAdminServer
 @EnableDiscoveryClient
-public class AdminServerApplication {
+public class MonitorServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AdminServerApplication.class, args);
+        SpringApplication.run(MonitorServerApplication.class, args);
     }
 }

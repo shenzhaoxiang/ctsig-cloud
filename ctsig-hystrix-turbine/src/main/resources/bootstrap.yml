@@ -8,7 +8,7 @@ server:
 turbine:
   aggregator:
     clusterConfig: default   # 指定聚合哪些集群，多个使用","分割，默认为default。可使用http://.../turbine.stream?cluster={clusterConfig之一}访问
-  appConfig: service-consumer-feign-hystrix  # 配置Eureka中的serviceId列表，用逗号分隔，表明监控哪些服务
+  appConfig: service-consumer  # 配置Eureka中的serviceId列表，用逗号分隔，表明监控哪些服务
   clusterNameExpression: new String("default")
 
 eureka:

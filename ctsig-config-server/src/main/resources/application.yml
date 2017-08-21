@@ -11,3 +11,18 @@ spring:
           search-paths: ctsig-config-repo                                  # git仓库地址下的相对地址，可以配置多个，用,分割。
           username:                                                         # git仓库的账号
           password:                                                        # git仓库的密码
+
+eureka:
+  instance:
+    hostname: eureka-server
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:8761/eureka/
+
+security:
+  user:
+    name: user
+    password: ${REGISTRY_SERVER_PASSWORD:password}

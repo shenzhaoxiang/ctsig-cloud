@@ -1,9 +1,8 @@
+server:
+  port: 8061
 spring:
   application:
     name: hystrix-dashboard-turbine
-
-server:
-  port: 8061
 
 turbine:
   aggregator:
@@ -20,6 +19,8 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:8761/eureka/
+  instance:
+      instance-id:  ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
 
 security:
   user:

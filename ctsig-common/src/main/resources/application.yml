@@ -1,0 +1,5 @@
+server:
+  port: 1110
+spring:
+  application:
+    name: common

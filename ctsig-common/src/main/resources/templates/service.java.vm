@@ -1,0 +1,20 @@
+package ${package.Service};
+
+import ${package.Entity}.${entity};
+import ${superServiceClassPackage};
+
+/**
+ * @copyright: CTSIG
+ * @author: ${author}
+ * @email: youremailname@ctsig.com
+ * @create: ${date}
+ * @since: 1.0.0
+ * @des: $!{table.comment} 服务接口
+ * @history:
+ * <version>      <time>       <author>        <desc>
+ * -----------------------------------------------------------------------
+ *
+ */
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+	
+}

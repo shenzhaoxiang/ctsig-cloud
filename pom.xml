@@ -20,6 +20,7 @@
         <module>ctsig-zikpin-server</module>
         <module>ctsig-hystrix-turbine</module>
         <module>ctsig-producer-consumer-example</module>
+        <module>ctsig-common</module>
     </modules>
 
     <properties>

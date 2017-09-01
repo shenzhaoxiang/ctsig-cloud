@@ -1,5 +1,6 @@
 package com.ctsig.cloud.example.consumer.client;
 
+import com.ctsig.cloud.example.consumer.fallback.ProducerClientFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @email: shenzhaoxiang@gmail.com
  * @date: 2017-08-09 22:01
  */
-@FeignClient("service-producer")
+@FeignClient(name = "service-producer", fallback = ProducerClientFallback.class)
 public interface ProducerClient {
 
     @GetMapping("/dc")

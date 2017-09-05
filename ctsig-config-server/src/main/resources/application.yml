@@ -9,8 +9,8 @@ spring:
         git:
           uri: https://git.oschina.net/shenzx/ctsig-cloud     # 配置git仓库的地址
           search-paths: ctsig-config-repo                                  # git仓库地址下的相对地址，可以配置多个，用,分割。
-          username: 535830005@qq.com                                                        # git仓库的账号
-          password: szx123456                                                       # git仓库的密码
+          username: @qq.com                                                        # git仓库的账号
+          password:                                                        # git仓库的密码
 
 eureka:
   instance:

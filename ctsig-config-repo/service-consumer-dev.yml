@@ -23,14 +23,14 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     service-url:
-      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://ctsig:ctsig_eureka_2017@${eureka.instance.hostname}:8761/eureka/
 
-security:
-  basic:
-    enabled: false
-  user:
-    name: user
-    password: ${REGISTRY_SERVER_PASSWORD:password}
+#security:
+#  basic:
+#    enabled: false
+#  user:
+#    name: user
+#    password: ${REGISTRY_SERVER_PASSWORD:password}
 
 feign:
   hystrix:

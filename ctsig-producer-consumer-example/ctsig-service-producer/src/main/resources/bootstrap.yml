@@ -1,8 +1,10 @@
 server:
-  port: 9411
+  port: 8080
 spring:
   application:
-    name: zipkin-server
+    name: service-producer
+#  zipkin:
+#    base-url: http://zipkin-server:9411/
   cloud:
     config:
       discovery:
@@ -12,17 +14,23 @@ spring:
 #      uri: http://config-server:8070/  # 配置中心的具体地址（不建议使用，因为不利于负载均衡）
       profile: dev                      # 指定profile，对应ctsig-config-server所获取的配置文件中的{profile}
       label: master                     # 指定git仓库的分支，对应ctsig-config-server所获取的配置文件的{label}
+  rabbitmq:
+      host: 192.168.8.8
+      port: 5672
+      username: shenzx
+      password: shenzx
 
 eureka:
   instance:
     hostname: eureka-server
     prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+#    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
   client:
     registerWithEureka: true
     fetchRegistry: true
     service-url:
       defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:8761/eureka/
+
 
 security:
   basic:
@@ -30,4 +38,7 @@ security:
   user:
     name: user
     password: ${REGISTRY_SERVER_PASSWORD:password}
-  
+
+feign:
+  hystrix:
+    enabled: true

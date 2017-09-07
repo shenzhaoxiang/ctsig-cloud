@@ -21,6 +21,8 @@
         <module>ctsig-hystrix-turbine</module>
         <module>ctsig-producer-consumer-example</module>
         <module>ctsig-common</module>
+        <module>ctsig-stream-rabbitmq</module>
+        <module>ctsig-sleuth-zipkin</module>
     </modules>
 
     <properties>
@@ -76,10 +78,10 @@
     <build>
         <finalName>${finalName}</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>

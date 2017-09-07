@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ctsig.cloud.admin</groupId>
-    <artifactId>ctsig-admin-server</artifactId>
+    <artifactId>ctsig-monitor-server</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -26,16 +26,44 @@
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
 
-        <!-- Spring Boot Admin -->
+        <!--  spring-boot-starter-security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- spring-boot-admin-serve -->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server</artifactId>
             <version>${spring-boot-admin.version}</version>
         </dependency>
+
+        <!-- spring-boot-admin-server-ui-login -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-server-ui-login</artifactId>
+            <version>${spring-boot-admin.version}</version>
+        </dependency>
+
+        <!-- spring-boot-admin-server-ui -->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server-ui</artifactId>
             <version>${spring-boot-admin.version}</version>
+        </dependency>
+
+        <!-- spring-boot-admin-starter-client -->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>${spring-boot-admin.version}</version>
+        </dependency>
+
+        <!-- JMX-bean Manager-->
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
         </dependency>
 
     </dependencies>

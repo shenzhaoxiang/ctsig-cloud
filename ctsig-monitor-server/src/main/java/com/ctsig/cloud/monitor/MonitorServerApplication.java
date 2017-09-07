@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableAutoConfiguration
-@EnableAdminServer
 @EnableDiscoveryClient
+@EnableAdminServer
 public class MonitorServerApplication {
     public static void main(String[] args) {
         SpringApplication.run(MonitorServerApplication.class, args);

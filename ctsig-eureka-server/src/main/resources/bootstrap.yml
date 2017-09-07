@@ -1,0 +1,32 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka-server
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: config-server       # 指定配置中心的service-id，便于扩展为高可用配置集群。
+#      failFast: true
+##      uri: http://config-server:8070/  # 配置中心的具体地址（不建议使用，因为不利于负载均衡）
+#      profile: dev                      # 指定profile，对应ctsig-config-server所获取的配置文件中的{profile}
+#      label: master                     # 指定git仓库的分支，对应ctsig-config-server所获取的配置文件的{label}
+
+
+eureka:
+  instance:
+    hostname: eureka-server
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: ${REGISTRY_SERVER_PASSWORD:password}

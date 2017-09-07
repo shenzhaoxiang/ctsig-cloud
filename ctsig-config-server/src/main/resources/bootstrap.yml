@@ -1,5 +1,5 @@
 server:
-  port: 8070
+  port: 8888
 spring:
   application:
     name: config-server
@@ -9,8 +9,13 @@ spring:
         git:
           uri: https://git.oschina.net/shenzx/ctsig-cloud     # 配置git仓库的地址
           search-paths: ctsig-config-repo                                  # git仓库地址下的相对地址，可以配置多个，用,分割。
-          username: @qq.com                                                        # git仓库的账号
+          username: 53583005@qq.com                                                        # git仓库的账号
           password:                                                        # git仓库的密码
+  rabbitmq:
+    host: 192.168.8.8
+    port: 5672
+    username: shenzx
+    password: shenzx
 
 eureka:
   instance:
@@ -23,6 +28,9 @@ eureka:
       defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:8761/eureka/
 
 security:
+  basic:
+    enabled: false
   user:
     name: user
     password: ${REGISTRY_SERVER_PASSWORD:password}
+
